@@ -1,0 +1,74 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    string a, b;
+    int vvod; //ширина
+    int i = 1; //для подсчёта высоты
+    int h = 1;
+    int n; // для подсчёта ширины между стенами
+    int c; // для подсчёта ширины окна
+    int d;
+    a = "   |";
+    b = "|\n";
+    cin >> vvod;
+    c = vvod/3;
+    d = (vvod/2 - 1)/5;
+        for (h = 1; h <= d - 1; h++) // пустая строка
+        {
+            cout << a;
+            for (n = 1; n <= vvod; n++) // ширина ВСЯ!!!!!!!!
+                cout << ' ';
+            cout << b;
+        }
+        // строка с верхней рамой
+        cout << a;
+        for (n = 1; n <= c + 1; n++) 
+            cout << ' ';
+        for (n = 1; n <= vvod - 2*c - 2; n++) // остаток для окна = ввод - место по бокам - 2 позиции для рамы
+            cout << '_';
+        for (n = 1; n <= c + 1; n++)
+            cout << ' ';
+        cout << b;
+        
+        for (h = 1; h <= (vvod/2 - 2) - 2*d; h++)
+        {
+            cout << a;
+            for (n = 1; n <= c; n++) 
+                cout << ' ';
+            cout << '|';
+            for (n = 1; n <= vvod - 2*c - 2; n++) // остаток для окна = ввод - место по бокам - 2 позиции для рамы
+                cout << ' ';
+            cout << '|';
+            for (n = 1; n <= c; n++)
+                cout << ' ';
+            cout << b;
+        }
+        
+        cout << a;
+        for (n = 1; n <= c; n++) 
+            cout << ' ';
+        cout << '|';
+        for (n = 1; n <= vvod - 2*c - 2; n++) // остаток для окна = ввод - место по бокам - 2 позиции для рамы
+            cout << '_';
+        cout << '|';
+        for (n = 1; n <= c; n++)
+            cout << ' ';
+        cout << b;
+        
+        for (h = 1; h <= d - 1; h++)
+        {
+            cout << a;
+            for (n = 1; n <= vvod; n++) // ширина ВСЯ!!!!!!!!
+                cout << ' ';
+            cout << b;
+        }
+        
+    cout << a;
+    for (n = 1; n <= vvod; n++) // последний ярус
+            cout << '_';
+    cout << b;
+    return 0;
+}
