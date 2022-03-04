@@ -1,0 +1,29 @@
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    string a, b;
+    int c;
+    a = "   |";
+    b = "|\n";
+    int n = 1;
+    int i = 1;
+    int vvod;
+    cin >> vvod;
+    c = vvod/3;
+    cout << c;
+    cout << endl;
+    cout << a;
+    for (n = 1; n <= c; n++) 
+        cout << ' ';
+    cout << '|';
+    for (n = 1; n <= vvod - 2*c - 2; n++) // остаток для окна = ввод - место по бокам - 2 позиции для рамы
+        cout << '_';
+    cout << '|';
+    for (n = 1; n <= c; n++)
+        cout << ' ';
+    cout << b;
+    return 0;
+}
