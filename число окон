@@ -1,0 +1,40 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    string a, b;
+    a = "   |";
+    b = "|\n";
+    int shir;
+    int s = 0;
+    int i; // подсчет пробелов
+    int n = 1; // подсчёт окон
+    
+    cin >> shir; // repeat
+    int d = shir/15 + 1; // сколько надо окон
+    cout << a;
+
+
+    for (i = 1; i <= shir/3/d; i++)
+        cout << ' ';
+    while (n <= d)
+    {
+        cout << '|';
+        for (i = 1; i <= (shir - shir/3/d - shir/3/d - 2*d - d)/d; i++) // окно
+            cout << ' ';
+        cout << '|';
+        if (n <= d - 1)
+        {
+            for (i = 1; i <= d; i++) // остаются или появляются новые клетки из-за целочисл деления
+                cout << ' ';
+        }
+        n++;
+    }
+    for (i = 1; i <= shir/3/d; i++)
+            cout << ' ';
+        cout << '|';
+    
+    return 0;
+}
