@@ -1,0 +1,47 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    string a, b;
+    int vvod;
+    cin >> vvod;
+    a = "   |";
+    b = "|\n";
+    int n;
+    int i = 1;
+    while (i <= (vvod/2 - 1)/6) //пустые строчки перед дверью
+    {
+        cout << a;
+        for (n = 1; n <= vvod; n++)
+            cout << ' ';
+        cout << b;
+        i++;
+    }
+    cout << a;
+    for (n = 1; n <= vvod - vvod/3; n++)
+        cout << ' ';
+    for (n = 1; n <= vvod/3; n++)
+        cout << '_';
+    cout << b;
+    while (i < (vvod/2 - 1) - 1)
+    {
+        cout << a;
+        for (n = 1; n <= vvod - vvod/3- 1; n++)
+            cout << ' ';
+        cout << '|';
+        for (n = 1; n <= vvod/3; n++)
+            cout << ' ';
+        cout << b;
+        i++;
+    }
+    cout << a;
+    for (n = 1; n <= vvod - vvod/3 - 1; n++)
+        cout << '_';
+    cout << '|';
+    for (n = 1; n <= vvod/3; n++)
+        cout << '_';
+    cout << b;
+        return 0;
+}
