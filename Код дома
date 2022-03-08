@@ -197,7 +197,7 @@ int main()
     cin >> wide;
     cout << "Введите количество этажей дома: " << endl;
     cin >> count;
-    if (wide < 3) || (count <= 0)
+    if ((wide < 3) || (count <= 0))
     {
         cout << "Невозможно построить дом.";
     }
