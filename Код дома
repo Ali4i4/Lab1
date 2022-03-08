@@ -7,7 +7,7 @@ int Roof (int wide)
     string a, b, c, d, e, f;
     int roof = wide - 2;
     int i, n, N;
-    a= '/';
+    a= "   /";
     b='\\';
     c='_';
     d=' ';
@@ -73,74 +73,74 @@ int window (int vvod, int count)
     int n; // для подсчёта расстояний внутри этажа
     int d; // пропорции окна по высоте
     int c; // счёт количества этажей
-    d = (vvod/2 - 1)/3;
-    int s = vvod/15 + 1; // для счёта количества окон
+    d = ((vvod - 2)/2 - 1)/3;
+    int s = (vvod - 2)/12 + 1; // для счёта количества окон
     for (c = 1; c <= count - 1; c++)
     {
         for (h = 1; h <= d - 1; h++) // пустые строки после крыши
         {
             cout << a;
-            for (n = 1; n <= vvod; n++)
+            for (n = 1; n <= vvod - 2; n++)
                 cout << ' ';
             cout << b; 
         }
         cout << a;  // строка с верхней рамой окна
-        for (n = 1; n <= vvod/4/s; n++)
+        for (n = 1; n <= (vvod - 2)/4/s; n++)
             cout << ' ';
         n = 1;
         while (n <= s)
         {
             cout << ' ';
-            for (i = 1; i <= (vvod - vvod/4/s - vvod/4/s - 2*s)/s; i++)
+            for (i = 1; i <= (vvod - 2 - (vvod - 2)/4/s - (vvod - 2)/4/s - 2*s)/s; i++)
                 cout << '_'; // верхняя рамка
             cout << ' ';
             n++;
         }
-        for (n = 1; n <= vvod/4/s + (vvod - vvod/4/s - vvod/4/s - 2*s) % s; n++)
+        for (n = 1; n <= (vvod - 2)/4/s + ((vvod - 2) - (vvod - 2)/4/s - (vvod - 2)/4/s - 2*s) % s; n++)
             cout << ' ';
         cout << b;
-        for (h = 1; h <= (vvod/2 - 2) - 2*d; h++) // база окна
+        for (h = 1; h <= ((vvod - 2)/2 - 2) - 2*d; h++) // база окна
         {
             cout << a;
-            for (n = 1; n <= vvod/4/s; n++) 
+            for (n = 1; n <= (vvod - 2)/4/s; n++) 
                 cout << ' ';
             n = 1;
             while (n <= s)
             {
                 cout << '|';
-                for (i = 1; i <= (vvod - vvod/4/s - vvod/4/s - 2*s)/s; i++)
+                for (i = 1; i <= ((vvod - 2) - (vvod - 2)/4/s - (vvod - 2)/4/s - 2*s)/s; i++)
                     cout << ' ';
                 cout << '|';
                 n++;
             }
-            for (i = 1; i <= vvod/4/s + (vvod - vvod/4/s - vvod/4/s - 2*s) % s; i++)
+            for (i = 1; i <= (vvod - 2)/4/s + ((vvod - 2) - (vvod - 2)/4/s - (vvod - 2)/4/s - 2*s) % s; i++)
                 cout << ' ';
             cout << b;
         }
         cout << a;  // строка нижней части окна
-        for (n = 1; n <= vvod/4/s; n++) 
+        for (n = 1; n <= (vvod - 2)/4/s; n++) 
             cout << ' ';
         n = 1;
         while (n <= s)
         {
             cout << '|';
-            for (i = 1; i <= (vvod - vvod/4/s - vvod/4/s - 2*s)/s; i++)
+            for (i = 1; i <= ((vvod - 2) - (vvod - 2)/4/s - (vvod - 2)/4/s - 2*s)/s; i++)
                 cout << '_';
             cout << '|';
             n++;
         }
-        for (n = 1; n <= vvod/4/s + (vvod - vvod/4/s - vvod/4/s - 2*s) % s; n++) 
+        for (n = 1; n <= (vvod - 2)/4/s + ((vvod - 2) - (vvod - 2)/4/s - (vvod - 2)/4/s - 2*s) % s; n++) 
             cout << ' ';
         cout << b;
         for (h = 1; h <= d - 1; h++) // пустые строки после окна
         {
             cout << a;
-            for (n = 1; n <= vvod; n++) 
+            for (n = 1; n <= (vvod - 2); n++) 
                 cout << ' ';
             cout << b;
         }
         cout << a; // последняя строка этажа с "полом"
-        for (n = 1; n <= vvod; n++) 
+        for (n = 1; n <= (vvod - 2); n++) 
                 cout << '_';
         cout << b;
     }
@@ -154,40 +154,40 @@ int door (int vvod)
     b = "|\n";
     int n;
     int i = 1;
-    while (i <= (vvod/2 - 1)/6) //пустые строчки перед дверью
+    while (i <= ((vvod - 2)/2 - 1)/6) //пустые строчки перед дверью
     {
         cout << a;
-        for (n = 1; n <= vvod; n++)
+        for (n = 1; n <= (vvod - 2); n++)
             cout << ' ';
         cout << b;
         i++;
     }
     cout << a;
-    for (n = 1; n <= vvod - vvod/3; n++)
+    for (n = 1; n <= (vvod - 2) - (vvod - 2)/3; n++)
         cout << ' ';
-    for (n = 1; n <= vvod/3; n++)
+    for (n = 1; n <= (vvod - 2)/3; n++)
         cout << '_';
     cout << b;
-    while (i < (vvod/2 - 1) - 1)
+    while (i < ((vvod - 2)/2 - 1) - 1)
     {
         cout << a;
-        for (n = 1; n <= vvod - vvod/3 - 1; n++)
+        for (n = 1; n <= (vvod - 2) - (vvod - 2)/3 - 1; n++)
             cout << ' ';
         cout << '|';
-        for (n = 1; n <= vvod/3; n++)
+        for (n = 1; n <= (vvod - 2)/3; n++)
             cout << ' ';
         cout << b;
         i++;
     }
     cout << a;
-    for (n = 1; n <= vvod - vvod/3 - 1; n++)
+    for (n = 1; n <= (vvod - 2) - (vvod - 2)/3 - 1; n++)
         cout << '_';
     cout << '|';
-    for (n = 1; n <= vvod/3; n++)
+    for (n = 1; n <= (vvod - 2)/3; n++)
         cout << '_';
     cout << b;
-        return 0;
-    }
+    return 0;
+}
 
 int main()
 {
@@ -204,10 +204,10 @@ int main()
     else 
     {
         Roof (wide);
+        cout << endl;
         window (wide, count);
         door (wide);
     }
     cout << "Вы успешно построили дом! С новым домом!";
     return 0;
 }
-
