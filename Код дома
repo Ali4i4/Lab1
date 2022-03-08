@@ -49,9 +49,5 @@ int main()
     cout << b;
         return 0;
 }
-}
 
-int main()
-{
-    return 0;
-}
+
