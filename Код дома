@@ -45,4 +45,5 @@ int Room(int wide){
         a.append(c);
     }
     cout<<a<<b;
+    return 0;
 }
