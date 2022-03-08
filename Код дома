@@ -2,6 +2,90 @@
 
 using namespace std;
 
+int window (int vvod, int count)
+{
+string a, b;
+    a = "   |";
+    b = "|\n";
+    int h; // для счёта строк высоты одного этажа дома
+    int i; // для подсчёта расстояний внутри этажа
+    int n; // для подсчёта расстояний внутри этажа
+    int d; // пропорции окна по высоте
+    int c; // счёт количества этажей
+    d = (vvod/2 - 1)/3;
+    int s = vvod/15 + 1; // для счёта количества окон
+    for (c = 1; c <= count; c++)
+    {
+        for (h = 1; h <= d - 1; h++) // пустые строки после крыши
+        {
+            cout << a;
+            for (n = 1; n <= vvod; n++)
+                cout << ' ';
+            cout << b; 
+        }
+        cout << a;  // строка с верхней рамой окна
+        for (n = 1; n <= vvod/4/s; n++)
+            cout << ' ';
+        n = 1;
+        while (n <= s)
+        {
+            cout << ' ';
+            for (i = 1; i <= (vvod - vvod/4/s - vvod/4/s - 2*s)/s; i++)
+                cout << '_'; // верхняя рамка
+            cout << ' ';
+            n++;
+        }
+        for (n = 1; n <= vvod/4/s + (vvod - vvod/4/s - vvod/4/s - 2*s) % s; n++)
+            cout << ' ';
+        cout << b;
+        for (h = 1; h <= (vvod/2 - 2) - 2*d; h++) // база окна
+        {
+            cout << a;
+            for (n = 1; n <= vvod/4/s; n++) 
+                cout << ' ';
+            n = 1;
+            while (n <= s)
+            {
+                cout << '|';
+                for (i = 1; i <= (vvod - vvod/4/s - vvod/4/s - 2*s)/s; i++)
+                    cout << ' ';
+                cout << '|';
+                n++;
+            }
+            for (i = 1; i <= vvod/4/s + (vvod - vvod/4/s - vvod/4/s - 2*s) % s; i++)
+                cout << ' ';
+            cout << b;
+        }
+        cout << a;  // строка нижней части окна
+        for (n = 1; n <= vvod/4/s; n++) 
+            cout << ' ';
+        n = 1;
+        while (n <= s)
+        {
+            cout << '|';
+            for (i = 1; i <= (vvod - vvod/4/s - vvod/4/s - 2*s)/s; i++)
+                cout << '_';
+            cout << '|';
+            n++;
+        }
+        for (n = 1; n <= vvod/4/s + (vvod - vvod/4/s - vvod/4/s - 2*s) % s; n++) 
+            cout << ' ';
+        cout << b;
+        for (h = 1; h <= d - 1; h++) // пустые строки после окна
+        {
+            cout << a;
+            for (n = 1; n <= vvod; n++) 
+                cout << ' ';
+            cout << b;
+        }
+        cout << a; // последняя строка этажа с "полом"
+        for (n = 1; n <= vvod; n++) 
+                cout << '_';
+        cout << b;
+    }
+    return 0;
+}
+
 int main()
 {
     return 0;
