@@ -207,7 +207,7 @@ int main()
         window (wide, count);
         door (wide);
         cout << endl;
-    cout << "Вы успешно построили дом! С новым домом!";
+        cout << "Вы успешно построили дом! С новым домом!";
     }
     return 0;
 }
