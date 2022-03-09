@@ -2,16 +2,16 @@
 
 using namespace std;
 
-int Roof (int wide)
+int Roof (int wide) //функция построения крыши
 {
     string a, b, c, d, e, f;
-    int roof = wide - 2;
+    int roof = wide - 2;  //ширина крыши без кровли
     int i, n, N;
     a= "   /";
     b= '\\';
     c= "_";
     d= ' ';
-    if (wide % 2 == 0)
+    if (wide % 2 == 0) //для четной ширины
     {
         for (i = 1; i < (wide/2); i++)
         {
@@ -30,7 +30,7 @@ int Roof (int wide)
             cout << e << a << f << b << endl;
         }
     }
-    else
+    else //для нечетной ширины
     {
         for (i = 1; i < (wide/2 + 4); i++)
         {
@@ -63,7 +63,7 @@ int Roof (int wide)
     return 0;
 }
 
-int window (int vvod, int count)
+int window (int vvod, int count) //функция построения этажа с окнами
 {
     string a, b;
     a = "   |";
@@ -147,7 +147,7 @@ int window (int vvod, int count)
     return 0;
 }
 
-int door (int vvod)
+int door (int vvod) //функция построения этажа с дверью
 {
     string a, b;
     a = "   |";
@@ -207,7 +207,8 @@ int main()
         cout << endl;
         window (wide, count);
         door (wide);
-    }
+        cout << endl;
     cout << "Вы успешно построили дом! С новым домом!";
+    }
     return 0;
 }
